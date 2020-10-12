@@ -1,0 +1,11 @@
+[Unit]
+Description=Watchdog
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lua /watchdog.lua
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target

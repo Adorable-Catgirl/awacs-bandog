@@ -1,0 +1,11 @@
+[Unit]
+Description=Watchdog timer trigger
+Requires=watchdog.service
+After=network.target
+
+[Timer]
+Unit=watchdog.service
+OnUnitActiveSec=1min
+
+[Install]
+WantedBy=timers.target

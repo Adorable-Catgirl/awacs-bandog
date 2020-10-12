@@ -1,0 +1,10 @@
+[Unit]
+Description=Watchdog timer updater
+Wants=watchdog.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nc 192.168.1.101 10000
+
+[Install]
+WantedBy=multi-user.target
